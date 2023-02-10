@@ -1,6 +1,6 @@
 ﻿namespace DoMe.Domain.ValueObjects;
 
-internal record Color
+public record Color
 {
 	private Color() { }
 

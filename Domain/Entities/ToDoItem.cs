@@ -1,6 +1,6 @@
 ﻿namespace DoMe.Domain.Entities;
 
-internal sealed class ToDoItem : BaseAuditableEntity
+public sealed class ToDoItem : BaseAuditableEntity
 {
 	public string? Title { get; set; }
 	public string? Note { get; set; }

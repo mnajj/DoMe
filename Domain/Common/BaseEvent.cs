@@ -2,4 +2,4 @@
 
 namespace DoMe.Domain.Common;
 
-internal abstract class BaseEvent : INotification { }
+public abstract class BaseEvent : INotification { }

@@ -2,7 +2,7 @@
 
 namespace DoMe.Domain.Entities;
 
-internal sealed class ToDoList : BaseAuditableEntity
+public sealed class ToDoList : BaseAuditableEntity
 {
 	public string? Title { get; set; }
 	public ValueObjects.Color Color { get; set; } 
