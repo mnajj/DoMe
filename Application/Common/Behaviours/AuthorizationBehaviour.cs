@@ -6,8 +6,7 @@ using MediatR;
 
 namespace DoMe.Application.Common.Behaviours;
 
-public sealed class AuthorizationBehaviour<TRequest, TResponse> :
-	IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
+public sealed class AuthorizationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>
 {
 	private readonly ICurrentUserService _currentUserService;
 	private readonly IIdentityService _identityService;
@@ -22,8 +21,7 @@ public sealed class AuthorizationBehaviour<TRequest, TResponse> :
 		{
 			if (_currentUserService.UserId is null) throw new UnauthorizedAccessException();
 
-			var attributesWithRoles = authAttributes
-				.Where(a => !string.IsNullOrWhiteSpace(a.Roles));
+			var attributesWithRoles = authAttributes.Where(a => !string.IsNullOrWhiteSpace(a.Roles));
 			if (attributesWithRoles.Any())
 			{
 				bool isAuthorized = false;
